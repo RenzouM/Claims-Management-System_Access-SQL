@@ -4,12 +4,12 @@
 
 I created a new database in Microsoft Access 2003 with the name "SistemaReclamamos2018.mdb".
 
-Tables:
+##Tables:
 Streets, segments, persons, reasons, requests, applicants and categories.
 
 ![ACCESS](img/accessdb.png)
 
-Queries:
+##Queries:
 
 ![ACCESS](img/queries.png)
 
@@ -50,7 +50,7 @@ GROUP BY categoria
 PIVOT estado;
 Finally I linked the "CROSSED" query to the data source of the form.
 
-Crossed references:
+##Crossed references:
 
 ![ACCESS](img/querycrossdata.png)
 
@@ -83,7 +83,7 @@ SELECT p.dni, sol.fecha_recl, p.nombre, p.apellido, sol.reiteracio, soli.id_soli
 FROM solicitantes AS sol, solicitudes AS soli, personas AS p
 WHERE sol.id_solicit=soli.id_solicit and sol.dni=p.dni;
 
-Form 2:
+##Form 2:
 
 ![ACCESS](img/accesssubf.png)
 
@@ -116,7 +116,7 @@ Form_formu.altura.ControlSource = "altura"
 Form_formu.reiteracio.ControlSource = "reiteracio"
 Set Form_formu.Recordset = rst
 
-Form 1:
+##Form 1:
 
 ![ACCESS](img/solicitpersona.png)
 
@@ -128,6 +128,6 @@ FROM categorias AS c, motivos AS m, solicitudes AS soli
 WHERE c.ID_CATEGOR=m.id_categor AND m.ID_MOTIVO=soli.id_motivo AND soli.ESTADO="P";
 After this add the necessary combo boxes with the following query in your control source: =Account([id_Solicit])
 
-Report:
+##Report:
 
 ![ACCESS](img/pending.png)
